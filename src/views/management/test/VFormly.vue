@@ -1,5 +1,5 @@
 <template>
-    <div @click="dos">
+    <div @click="dos" v-if="false">
         <form>
             <formly-form
                 :form="form"
@@ -25,11 +25,10 @@
                         fieldService: 'JobAddCronFields',
                     })
                 "
-            >
-                hellow
-            </button>
+            ></button>
         </div>
     </div>
+    <div v-else>nothong to show</div>
 </template>
 
 

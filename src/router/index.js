@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const Login = () => import('@/views/user/Login')
+const Login = () => import('@/views/login/Login')
 const Home = () => import('@/views/Home')
 const Dashboard1 = () => import('@/views/dashboard/Dashboard1')
 const Index1 = () => import('@/views/management/index/Index1')
@@ -11,6 +11,8 @@ const Index2 = () => import('@/views/management/index/Index2')
 const Index3 = () => import('@/views/management/index/Index3')
 const JobMgr = () => import('@/views/management/job/JobMgr')
 const WorkerMgr = () => import('@/views/management/job/WorkerMgr')
+const UserMgr = () => import('@/views/management/user/UserMgr')
+const PermitionMgr = () => import('@/views/management/user/PermitionMgr')
 const VFormly = () => import('@/views/management/test/VFormly')
 
 const routes = [
@@ -61,6 +63,22 @@ const routes = [
         path: 'workermgr',
         name: 'workermgr',
         component: WorkerMgr
+      },
+    ]
+  },
+  {
+    path: '/user',
+    component: Home,
+    children: [
+      {
+        path: 'usermgr',
+        name: 'usermgr',
+        component: UserMgr
+      },
+      {
+        path: 'permitionmgr',
+        name: 'permitionmgr',
+        component: PermitionMgr
       },
     ]
   },

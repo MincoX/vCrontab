@@ -1,6 +1,6 @@
-import longPress from '@/static/js/directives/longPress';
-import debounce from '@/static/js/directives/debounce';
-import inputNumber from '@/static/js/directives/inputNumber';
+import longPress from '@/static/js/directive/longPress';
+import debounce from '@/static/js/directive/debounce';
+import inputNumber from '@/static/js/directive/inputNumber';
 
 const directives = {
     longPress,
