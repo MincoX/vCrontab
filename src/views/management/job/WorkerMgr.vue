@@ -1,63 +1,95 @@
 <template>
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <h3 class="card-title">集群列表</h3>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header border-transparent">
+                    <h3 class="card-title">集群列表</h3>
+                    <div class="card-tools">
+                        <div
+                            class="input-group input-group-sm"
+                            style="width: 150px"
+                        >
+                            <input
+                                type="text"
+                                name="table_search"
+                                class="form-control float-right"
+                                placeholder="Search"
+                            />
 
-            <div class="card-tools">
-                <div class="input-group input-group-sm">
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Search Mail"
-                    />
-                    <div class="input-group-append">
-                        <div class="btn btn-primary">
-                            <i class="fas fa-search"></i>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.card-tools -->
-        </div>
-        <div class="card-body p-0">
-            <div class="table-responsive mailbox-messages">
-                <table class="table table-hover table-striped">
-                    <thead>
-                        <tr class="text-center">
-                            <th>IP</th>
-                            <th>工作时间</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr
-                            class="text-center"
-                            v-for="item in workerPageDatas"
-                            :key="item.id"
-                        >
-                            <td>
-                                {{ item.ip }}
-                            </td>
-                            <td>
-                                {{ item.activeTime }}
-                            </td>
-                            <td class="mailbox-name"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="card-footer p-0">
-            <div class="mailbox-controls">
-                <div class="float-right">
-                    <Pagination
-                        :page-index="workerCurrentPage"
-                        :total="workerTotalCount"
-                        :page-size="workerPageSize"
-                        @change="workerPageChange"
-                    />
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped m-0">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>IP</th>
+                                    <th>上线时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    class="text-center"
+                                    v-for="item in workerPageDatas"
+                                    :key="item.id"
+                                >
+                                    <td>
+                                        {{ item.ip }}
+                                    </td>
+                                    <td>
+                                        {{ item.activeTime }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                <Pagination
+                    :page-index="workerCurrentPage"
+                    :total="workerTotalCount"
+                    :page-size="workerPageSize"
+                    @change="workerPageChange"
+                />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-box mb-3 bg-info">
+                <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">调度中</span>
+                    <span class="info-box-number">5,200</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 bg-danger">
+                <span class="info-box-icon"
+                    ><i class="fas fa-cloud-download-alt"></i
+                ></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">执行错误</span>
+                    <span class="info-box-number">114,381</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 bg-success">
+                <span class="info-box-icon"
+                    ><i class="far fa-comment"></i
+                ></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">执行完成</span>
+                    <span class="info-box-number">163,921</span>
+                </div>
+                <!-- /.info-box-content -->
             </div>
         </div>
     </div>
@@ -76,6 +108,10 @@ export default {
     },
     mounted() {
         this.getWorkers();
+        this.timer = setInterval(this.getWorkers, 1 * 30 * 1000);
+    },
+    beforeDestroy() {
+        clearInterval(this.timer);
     },
     methods: {
         getWorkers() {

@@ -5,8 +5,7 @@ module.exports = {
     userInfo: { path: '/api/user/info' },
   },
   job: {
-    mysqlList: { path: '/api/job/mysql/list' },
-    etcdList: { path: '/api/job/etcd/list' },
+    list: { path: '/api/job/list' },
     add: { path: '/api/job/add' },
     delete: { path: '/api/job/delete' },
     update: { path: '/api/job/update' },

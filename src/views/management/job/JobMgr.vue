@@ -264,7 +264,7 @@ export default {
         this.getJobs();
         this.jobType = Constants.JobType();
         this.statusType = Constants.StatusType();
-        this.timer = setInterval(this.getJobs, 1 * 60 * 1000);
+        this.timer = setInterval(this.getJobs, 1 * 10 * 1000);
     },
     beforeDestroy() {
         clearInterval(this.timer);
@@ -273,7 +273,7 @@ export default {
         getJobs() {
             this.$req
                 .fetch(
-                    API.job.mysqlList.path,
+                    API.job.list.path,
                     {
                         reqTyp: this.reqTyp,
                         pageSize: this.jobPageSize,
@@ -285,14 +285,8 @@ export default {
                     if (resp.code == 200) {
                         this.jobPageDatas = resp.data.jobs;
                         this.jobTotalCount = resp.data.totalCount;
-                        console.info("etcd mysqlList >>> ", resp.data.jobs);
                     }
                 });
-            this.$req.fetch(API.job.etcdList.path, {}, {}).then((resp) => {
-                if (resp.code == 200) {
-                    console.info("etcd jibList >>> ", resp.data.jobs);
-                }
-            });
         },
         getLogs(name) {
             this.jobName = name;
