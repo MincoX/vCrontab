@@ -1,46 +1,24 @@
 <template>
-    <div
-        class="modal fade show"
-        id="modal-default"
-        style="display: block; padding-right: 17px"
-        aria-modal="true"
-        v-if="show"
-    >
+    <div class="modal fade show" id="modal-default" style="display: block; padding-right: 17px"
+         aria-modal="true" v-if="show">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">{{ title }}</h4>
-                    <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                    >
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" @click="show = false">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <formly-form
-                        :form="form"
-                        :model="model"
-                        :fields="fields"
-                        ref="credentials"
-                    ></formly-form>
+                    <formly-form :form="form" :model="model" :fields="fields" ref="credentials">
+                    </formly-form>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button
-                        type="button"
-                        class="btn btn-default"
-                        data-dismiss="modal"
-                        @click="show = false"
-                    >
+                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                            @click="show = false">
                         取消
                     </button>
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        @click="formValid"
-                    >
+                    <button type="button" class="btn btn-primary" @click="formValid">
                         确认
                     </button>
                 </div>
@@ -124,7 +102,7 @@ export default {
                     if (!this.form.$valid) return;
                     this.submit();
                 })
-                .catch((e) => {});
+                .catch((e) => { });
         },
         submit() {
             this.show = false;
@@ -141,9 +119,7 @@ export default {
                     });
             } else {
                 this.$req
-                    .fetch(this.apiObj.path, this.model, {
-                        successNotify: true,
-                    })
+                    .fetch(this.apiObj.path, this.model, { successNotify: true })
                     .then((res) => {
                         if (resp.code == 200) {
                             this.reload();

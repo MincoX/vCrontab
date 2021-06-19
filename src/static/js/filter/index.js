@@ -1,4 +1,6 @@
-import { formatDate } from '@/static/js/filter/filters'  
+import {
+    formatDate
+} from '@/static/js/filter/filters'
 
 const filters = {
     formatDate,

@@ -1,18 +1,12 @@
 <template>
     <div @click="dos" v-if="false">
         <form>
-            <formly-form
-                :form="form"
-                :model="model"
-                :fields="fields"
-                ref="testCredentials"
-            >
+            <formly-form :form="form" :model="model" :fields="fields" ref="testCredentials">
             </formly-form>
         </form>
         提交
         <div>
-            <button
-                @click="
+            <button @click="
                     $emit('sendModaloption', {
                         title: 'qqqq',
                         api: 'post.job.add',
@@ -24,8 +18,7 @@
                         },
                         fieldService: 'JobAddCronFields',
                     })
-                "
-            ></button>
+                "></button>
         </div>
     </div>
     <div v-else>nothong to show</div>

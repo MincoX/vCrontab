@@ -1,7 +1,6 @@
 export default {
   UserUpdateInfoFields: function () {
-    return [
-      {
+    return [{
         key: 'username',
         type: 'input',
         required: true,
@@ -52,8 +51,7 @@ export default {
     ]
   },
   UserUpdatePwdFields: function () {
-    return [
-      {
+    return [{
         key: 'oldPwd',
         type: 'input',
         required: true,
@@ -104,8 +102,7 @@ export default {
     ]
   },
   JobAddCronFields: function () {
-    return [
-      {
+    return [{
         key: 'name',
         type: 'input',
         required: true,
@@ -156,8 +153,7 @@ export default {
     ]
   },
   JobAddOnceFields: function () {
-    return [
-      {
+    return [{
         key: 'name',
         type: 'input',
         required: true,
@@ -192,8 +188,7 @@ export default {
     ]
   },
   example: function () {
-    return [
-      {
+    return [{
         key: 'sex',
         type: 'select',
         options: ['Male', 'Female'],
@@ -205,10 +200,17 @@ export default {
       {
         key: 'status',
         type: 'select',
-        templateOptions: { label: '账号状态' },
-        options: [
-          { label: '禁用', value: false },
-          { label: '激活', value: true },
+        templateOptions: {
+          label: '账号状态'
+        },
+        options: [{
+            label: '禁用',
+            value: false
+          },
+          {
+            label: '激活',
+            value: true
+          },
         ],
       },
     ]
@@ -246,7 +248,10 @@ function onBlurStyle(_this) {
 function setOptions(label, placeholder, type) {
   return {
     label: label,
-    atts: { placeholder: placeholder, type: type },
+    atts: {
+      placeholder: placeholder,
+      type: type
+    },
     onBlur: function (e) {
       onBlurStyle(this)
     },

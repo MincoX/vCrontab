@@ -12,8 +12,7 @@
                     <div class="col-lg-3 fill-h">
                         <div class="xpanel-wrapper xpanel-wrapper-3">
                             <div class="xpanel">
-                                <div class="fill-h"
-                                     id="leftTop"></div>
+                                <div class="fill-h" id="leftTop"></div>
                             </div>
                         </div>
                         <div class="xpanel-wrapper xpanel-wrapper-3">
@@ -21,16 +20,14 @@
                                 <div class="col-lg-6 fill-h">
                                     <div class="xpanel-wrapper xpanel-wrapper-1">
                                         <div class="xpanel">
-                                            <div class="fill-h"
-                                                 id="leftCenter1"></div>
+                                            <div class="fill-h" id="leftCenter1"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 fill-h">
                                     <div class="xpanel-wrapper xpanel-wrapper-1">
                                         <div class="xpanel">
-                                            <div class="fill-h"
-                                                 id="leftCenter2"></div>
+                                            <div class="fill-h" id="leftCenter2"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -38,30 +35,26 @@
                         </div>
                         <div class="xpanel-wrapper xpanel-wrapper-3">
                             <div class="xpanel">
-                                <div class="fill-h"
-                                     id="leftBottom"></div>
+                                <div class="fill-h" id="leftBottom"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 fill-h">
                         <div class="xpanel-wrapper xpanel-wrapper-1">
                             <div class="xpanel">
-                                <div class="fill-h"
-                                     id="centerMap"></div>
+                                <div class="fill-h" id="centerMap"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 fill-h">
                         <div class="xpanel-wrapper xpanel-wrapper-2">
                             <div class="xpanel">
-                                <div class="fill-h"
-                                     id="rightTop"></div>
+                                <div class="fill-h" id="rightTop"></div>
                             </div>
                         </div>
                         <div class="xpanel-wrapper xpanel-wrapper-2">
                             <div class="xpanel">
-                                <div class="fill-h"
-                                     id="rightBottom"></div>
+                                <div class="fill-h" id="rightBottom"></div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +68,7 @@
 import "@/static/js/lib/china.js";
 
 export default {
-    mounted () {
+    mounted() {
         this.leftTop();
         this.rightTop();
         this.centerMap();

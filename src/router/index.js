@@ -15,8 +15,7 @@ const UserMgr = () => import('@/views/management/user/UserMgr')
 const PermitionMgr = () => import('@/views/management/user/PermitionMgr')
 const VFormly = () => import('@/views/management/test/VFormly')
 
-const routes = [
-  {
+const routes = [{
     path: '',
     redirect: '/login'
   },
@@ -31,8 +30,7 @@ const routes = [
   {
     path: '/index',
     component: Home,
-    children: [
-      {
+    children: [{
         //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了
         path: 'index1',
         name: 'index1',
@@ -53,8 +51,7 @@ const routes = [
   {
     path: '/job',
     component: Home,
-    children: [
-      {
+    children: [{
         path: 'jobmgr',
         name: 'jobmgr',
         component: JobMgr
@@ -69,8 +66,7 @@ const routes = [
   {
     path: '/user',
     component: Home,
-    children: [
-      {
+    children: [{
         path: 'usermgr',
         name: 'usermgr',
         component: UserMgr
@@ -85,13 +81,11 @@ const routes = [
   {
     path: '/test',
     component: Home,
-    children: [
-      {
-        path: 'vformly',
-        name: 'vformly',
-        component: VFormly
-      },
-    ]
+    children: [{
+      path: 'vformly',
+      name: 'vformly',
+      component: VFormly
+    }, ]
   },
 ]
 
@@ -107,7 +101,9 @@ import NProgress from 'nprogress'
 
 router.beforeEach((to, from, next) => {
   if (to.path != '/login' && localStorage.getItem('userInfo') == null) {
-    next({ path: '/login' })
+    next({
+      path: '/login'
+    })
   }
   next()
 })

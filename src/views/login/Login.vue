@@ -1,9 +1,7 @@
 <template>
     <div class="db-view">
-        <div class="login"
-             id="login">
-            <a href="javascript:;"
-               class="log-close">
+        <div class="login" id="login">
+            <a href="javascript:;" class="log-close">
                 <i class="icons close"></i>
             </a>
             <div class="log-bg">
@@ -14,21 +12,13 @@
                 <div class="log-logo">分布式任务调度</div>
             </div>
             <div class="log-email">
-                <input type="text"
-                       placeholder="username"
-                       :class="
+                <input type="text" placeholder="username" :class="
                         'log-input' + (username == '' ? ' log-input-empty' : '')
-                    "
-                       v-model="username" />
-                <input type="password"
-                       placeholder="Password"
-                       :class="
+                    " v-model="username" />
+                <input type="password" placeholder="Password" :class="
                         'log-input' + (password == '' ? ' log-input-empty' : '')
-                    "
-                       v-model="password" />
-                <a href="javascript:;"
-                   class="log-btn"
-                   @click="login">Login</a>
+                    " v-model="password" />
+                <a href="javascript:;" class="log-btn" @click="login">Login</a>
             </div>
         </div>
     </div>
@@ -38,15 +28,15 @@
 import API from "@/network/api";
 export default {
     name: "Login",
-    data () {
+    data() {
         return {
             username: "MincoX",
             password: "mincoroot",
         };
     },
-    mounted () { },
+    mounted() { },
     methods: {
-        login () {
+        login() {
             if (this.username != "" && this.password != "") {
                 this.isLoging = true;
                 this.$req

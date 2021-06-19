@@ -32,17 +32,12 @@
                                     <div class></div>
                                 </div>
                             </div>
-                            <canvas
-                                id="visitors-chart"
-                                height="200"
-                                width="764"
-                                class="chartjs-render-monitor"
-                                style="
+                            <canvas id="visitors-chart" height="200" width="764"
+                                    class="chartjs-render-monitor" style="
                                     display: block;
                                     width: 764px;
                                     height: 200px;
-                                "
-                            ></canvas>
+                                "></canvas>
                         </div>
 
                         <div class="d-flex flex-row justify-content-end">
@@ -83,11 +78,8 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img
-                                            src="~@/assets/img/profile.png"
-                                            alt="Product 1"
-                                            class="img-circle img-size-32 mr-2"
-                                        />
+                                        <img src="~@/assets/img/profile.png" alt="Product 1"
+                                             class="img-circle img-size-32 mr-2" />
                                         Some Product
                                     </td>
                                     <td>$13 USD</td>
@@ -106,11 +98,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img
-                                            src="~@/assets/img/profile.png"
-                                            alt="Product 1"
-                                            class="img-circle img-size-32 mr-2"
-                                        />
+                                        <img src="~@/assets/img/profile.png" alt="Product 1"
+                                             class="img-circle img-size-32 mr-2" />
                                         Another Product
                                     </td>
                                     <td>$29 USD</td>
@@ -129,11 +118,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img
-                                            src="~@/assets/img/profile.png"
-                                            alt="Product 1"
-                                            class="img-circle img-size-32 mr-2"
-                                        />
+                                        <img src="~@/assets/img/profile.png" alt="Product 1"
+                                             class="img-circle img-size-32 mr-2" />
                                         Amazing Product
                                     </td>
                                     <td>$1,230 USD</td>
@@ -152,11 +138,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img
-                                            src="~@/assets/img/profile.png"
-                                            alt="Product 1"
-                                            class="img-circle img-size-32 mr-2"
-                                        />
+                                        <img src="~@/assets/img/profile.png" alt="Product 1"
+                                             class="img-circle img-size-32 mr-2" />
                                         Perfect Item
                                         <span class="badge bg-danger">NEW</span>
                                     </td>
@@ -190,9 +173,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <p class="d-flex flex-column">
-                                <span class="text-bold text-lg"
-                                    >$18,230.00</span
-                                >
+                                <span class="text-bold text-lg">$18,230.00</span>
                                 <span>Sales Over Time</span>
                             </p>
                             <p class="ml-auto d-flex flex-column text-right">
@@ -212,17 +193,11 @@
                                     <div class></div>
                                 </div>
                             </div>
-                            <canvas
-                                id="sales-chart"
-                                height="200"
-                                style="
+                            <canvas id="sales-chart" height="200" style="
                                     display: block;
                                     width: 764px;
                                     height: 200px;
-                                "
-                                width="764"
-                                class="chartjs-render-monitor"
-                            ></canvas>
+                                " width="764" class="chartjs-render-monitor"></canvas>
                         </div>
 
                         <div class="d-flex flex-row justify-content-end">
@@ -252,80 +227,66 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div
-                            class="
+                        <div class="
                                 d-flex
                                 justify-content-between
                                 align-items-center
                                 border-bottom
                                 mb-3
-                            "
-                        >
+                            ">
                             <p class="text-success text-xl">
                                 <i class="ion ion-ios-refresh-empty"></i>
                             </p>
                             <p class="d-flex flex-column text-right">
                                 <span class="font-weight-bold">
-                                    <i
-                                        class="
+                                    <i class="
                                             ion ion-android-arrow-up
                                             text-success
-                                        "
-                                    ></i>
+                                        "></i>
                                     12%
                                 </span>
                                 <span class="text-muted">CONVERSION RATE</span>
                             </p>
                         </div>
-                        <div
-                            class="
+                        <div class="
                                 d-flex
                                 justify-content-between
                                 align-items-center
                                 border-bottom
                                 mb-3
-                            "
-                        >
+                            ">
                             <p class="text-warning text-xl">
                                 <i class="ion ion-ios-cart-outline"></i>
                             </p>
                             <p class="d-flex flex-column text-right">
                                 <span class="font-weight-bold">
-                                    <i
-                                        class="
+                                    <i class="
                                             ion ion-android-arrow-up
                                             text-warning
-                                        "
-                                    ></i>
+                                        "></i>
                                     0.8%
                                 </span>
                                 <span class="text-muted">SALES RATE</span>
                             </p>
                         </div>
-                        <div
-                            class="
+                        <div class="
                                 d-flex
                                 justify-content-between
                                 align-items-center
                                 mb-0
-                            "
-                        >
+                            ">
                             <p class="text-danger text-xl">
                                 <i class="ion ion-ios-people-outline"></i>
                             </p>
                             <p class="d-flex flex-column text-right">
                                 <span class="font-weight-bold">
-                                    <i
-                                        class="
+                                    <i class="
                                             ion ion-android-arrow-down
                                             text-danger
-                                        "
-                                    ></i>
+                                        "></i>
                                     1%
                                 </span>
-                                <span class="text-muted"
-                                    >REGISTRATION RATE</span
-                                >
+                                <span class="text-muted">REGISTRATION RATE</span>
                             </p>
                         </div>
                     </div>

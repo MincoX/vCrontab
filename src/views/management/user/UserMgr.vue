@@ -3,20 +3,11 @@
         <div class="card-header">
             <h3 class="card-title">用户列表</h3>
             <div class="card-tools">
-                <button
-                    type="button"
-                    class="btn btn-tool"
-                    data-card-widget="collapse"
-                    title="Collapse"
-                >
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                        title="Collapse">
                     <i class="fas fa-minus"></i>
                 </button>
-                <button
-                    type="button"
-                    class="btn btn-tool"
-                    data-card-widget="remove"
-                    title="Remove"
-                >
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -43,10 +34,7 @@
                         <td>2021/06/16 06:08:06</td>
                         <td>激活</td>
                         <td>
-                            <a
-                                class="btn btn-info btn-sm"
-                                href="#"
-                                @click="
+                            <a class="btn btn-info btn-sm" href="#" @click="
                                     $emit('sendModaloption', {
                                         title: '修改信息',
                                         apiObj: 'post.user.update',
@@ -60,8 +48,7 @@
                                         },
                                         fieldService: 'UserUpdateInfoFields',
                                     })
-                                "
-                            >
+                                ">
                                 <i class="fas fa-pencil-alt"> </i>
                                 修改信息
                             </a>

@@ -6,16 +6,12 @@
         <!-- <li :class="['paging-item', 'paging-item--first', {'paging-item--disabled' : index === 1}]"
             @click="first">first</li> -->
 
-        <li :class="['paging-item', 'paging-item--more']"
-            v-if="showPrevMore">...</li>
+        <li :class="['paging-item', 'paging-item--more']" v-if="showPrevMore">...</li>
 
         <li :class="['paging-item', {'paging-item--current' :index === pager}]"
-            v-for="pager in pagers"
-            :key="pager.id"
-            @click="go(pager)">{{ pager }}</li>
+            v-for="pager in pagers" :key="pager.id" @click="go(pager)">{{ pager }}</li>
 
-        <li :class="['paging-item', 'paging-item--more']"
-            v-if="showNextMore">...</li>
+        <li :class="['paging-item', 'paging-item--more']" v-if="showNextMore">...</li>
 
         <!-- <li :class="['paging-item', 'paging-item--last', {'paging-item--disabled' : index === pages}]"
             @click="last">last</li> -->
@@ -57,27 +53,27 @@ export default {
 
     },
     methods: {
-        prev () {
+        prev() {
             if (this.index > 1) {
                 this.go(this.index - 1)
             }
         },
-        next () {
+        next() {
             if (this.index < this.pages) {
                 this.go(this.index + 1)
             }
         },
-        first () {
+        first() {
             if (this.index !== 1) {
                 this.go(1)
             }
         },
-        last () {
+        last() {
             if (this.index != this.pages) {
                 this.go(this.pages)
             }
         },
-        go (page) {
+        go(page) {
             if (this.index !== page) {
                 this.index = page
                 //父组件通过change方法来接受当前的页码
@@ -88,12 +84,12 @@ export default {
     computed: {
 
         //计算总页码
-        pages () {
+        pages() {
             return Math.ceil(this.size / this.limit)
         },
 
         //计算页码，当count等变化时自动计算
-        pagers () {
+        pagers() {
             const array = []
             const perPages = this.perPages
             const pageCount = this.pages
@@ -125,7 +121,7 @@ export default {
             return array
         }
     },
-    data () {
+    data() {
         return {
             index: this.pageIndex, //当前页码
             limit: this.pageSize, //每页显示条数
@@ -135,13 +131,13 @@ export default {
         }
     },
     watch: {
-        pageIndex (val) {
+        pageIndex(val) {
             this.index = val || 1
         },
-        pageSize (val) {
+        pageSize(val) {
             this.limit = val || 10
         },
-        total (val) {
+        total(val) {
             this.size = val || 1
         }
     }

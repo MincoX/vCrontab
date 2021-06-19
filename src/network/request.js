@@ -8,9 +8,9 @@ import router from "@/router";
 import utils from '@/static/js/common/utils'
 import Loading from '@/components/loading'
 
-axios.defaults.timeout = 1000 * 60;
-// axios.defaults.baseURL = 'http://47.98.56.172:10002';
+axios.defaults.timeout = 1 * 30 * 1000;
 // axios.defaults.baseURL = 'http://127.0.0.1:10002';
+axios.defaults.baseURL = 'http://crontab.mincox.cn';
 
 axios.interceptors.request.use(
   config => {
@@ -36,7 +36,9 @@ axios.interceptors.response.use(
     if (response.status == 401) {
       router.push({
         path: "/login",
-        query: { redirect: router.currentRoute.fullPath } // 登录成功后从定向到之前的页面
+        query: {
+          redirect: router.currentRoute.fullPath
+        } // 登录成功后从定向到之前的页面
       })
     }
     return response;

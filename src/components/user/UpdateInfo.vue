@@ -6,11 +6,8 @@
                 <div class="card card-primary card-outline update-userinfo">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img
-                                class="profile-user-img img-fluid img-circle"
-                                src="~@/assets/img/profile.png"
-                                alt="User profile picture"
-                            />
+                            <img class="profile-user-img img-fluid img-circle"
+                                 src="~@/assets/img/profile.png" alt="User profile picture" />
                         </div>
 
                         <h3 class="profile-username text-center">
@@ -26,20 +23,12 @@
 
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"
-                                        ><i
-                                            data-v-fae5bece=""
-                                            class="fas fa-envelope"
-                                        ></i
-                                    ></span>
+                                    <span class="input-group-text"><i data-v-fae5bece=""
+                                           class="fas fa-envelope"></i></span>
                                 </div>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    data-inputmask='"mask": "(999) 999-9999"'
-                                    data-mask=""
-                                    inputmode="text"
-                                />
+                                <input type="text" class="form-control"
+                                       data-inputmask='"mask": "(999) 999-9999"' data-mask=""
+                                       inputmode="text" />
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -49,17 +38,12 @@
 
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"
-                                        ><i class="fas fa-phone"></i
-                                    ></span>
+                                    <span class="input-group-text"><i
+                                           class="fas fa-phone"></i></span>
                                 </div>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    data-inputmask='"mask": "(999) 999-9999"'
-                                    data-mask=""
-                                    inputmode="text"
-                                />
+                                <input type="text" class="form-control"
+                                       data-inputmask='"mask": "(999) 999-9999"' data-mask=""
+                                       inputmode="text" />
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -75,9 +59,7 @@
                             </select>
                         </div>
 
-                        <a href="#" class="btn btn-primary btn-block"
-                            ><b>确认修改</b></a
-                        >
+                        <a href="#" class="btn btn-primary btn-block"><b>确认修改</b></a>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -97,7 +79,7 @@ export default {
     data() {
         return {};
     },
-    mounted() {},
+    mounted() { },
     methods: {},
 };
 </script>

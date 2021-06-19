@@ -1,4 +1,6 @@
-import { Notification } from 'element-ui'
+import {
+    Notification
+} from 'element-ui'
 // 样式在全局已经引入
 // import 'element-ui/lib/theme-chalk/index.css'
 

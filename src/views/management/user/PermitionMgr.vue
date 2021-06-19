@@ -1,19 +1,13 @@
 <template>
     <div class="row">
         <div class="col-md-3">
-            <a href="compose.html" class="btn btn-primary btn-block mb-3"
-                >权限列表</a
-            >
+            <a href="compose.html" class="btn btn-primary btn-block mb-3">权限列表</a>
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Folders</h3>
 
                     <div class="card-tools">
-                        <button
-                            type="button"
-                            class="btn btn-tool"
-                            data-card-widget="collapse"
-                        >
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
                         </button>
                     </div>
@@ -23,9 +17,7 @@
                         <li class="nav-item active">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-inbox"></i> Inbox
-                                <span class="badge bg-primary float-right"
-                                    >12</span
-                                >
+                                <span class="badge bg-primary float-right">12</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -41,9 +33,7 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-filter"></i> Junk
-                                <span class="badge bg-warning float-right"
-                                    >65</span
-                                >
+                                <span class="badge bg-warning float-right">65</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -56,19 +46,13 @@
             </div>
         </div>
         <div class="col-md-4">
-            <a href="compose.html" class="btn btn-primary btn-block mb-3"
-                >角色列表</a
-            >
+            <a href="compose.html" class="btn btn-primary btn-block mb-3">角色列表</a>
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Folders</h3>
 
                     <div class="card-tools">
-                        <button
-                            type="button"
-                            class="btn btn-tool"
-                            data-card-widget="collapse"
-                        >
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
                         </button>
                     </div>
@@ -77,10 +61,8 @@
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item active">
                             <a href="#" class="nav-link">
-                                <i class="fas fa-inbox"></i> 
-                                <span class="badge bg-primary float-right"
-                                    >12</span
-                                >
+                                <i class="fas fa-inbox"></i>
+                                <span class="badge bg-primary float-right">12</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -96,9 +78,7 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-filter"></i> Junk
-                                <span class="badge bg-warning float-right"
-                                    >65</span
-                                >
+                                <span class="badge bg-warning float-right">65</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -118,11 +98,7 @@
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Search Mail"
-                            />
+                            <input type="text" class="form-control" placeholder="Search Mail" />
                             <div class="input-group-append">
                                 <div class="btn btn-primary">
                                     <i class="fas fa-search"></i>
@@ -138,25 +114,15 @@
                                 <tr>
                                     <td>
                                         <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                value=""
-                                                id="check1"
-                                            />
+                                            <input type="checkbox" value="" id="check1" />
                                             <label for="check1"></label>
                                         </div>
                                     </td>
                                     <td class="mailbox-star">
-                                        <a href="#"
-                                            ><i
-                                                class="fas fa-star text-warning"
-                                            ></i
-                                        ></a>
+                                        <a href="#"><i class="fas fa-star text-warning"></i></a>
                                     </td>
                                     <td class="mailbox-name">
-                                        <a href="read-mail.html"
-                                            >Alexander Pierce</a
-                                        >
+                                        <a href="read-mail.html">Alexander Pierce</a>
                                     </td>
                                     <td class="mailbox-subject">
                                         <b>AdminLTE 3.0 Issue</b> - Trying to
@@ -168,29 +134,19 @@
                                 <tr>
                                     <td>
                                         <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                value=""
-                                                id="check2"
-                                            />
+                                            <input type="checkbox" value="" id="check2" />
                                             <label for="check2"></label>
                                         </div>
                                     </td>
                                     <td class="mailbox-star">
-                                        <a href="#"
-                                            ><i
-                                                class="
+                                        <a href="#"><i class="
                                                     fas
                                                     fa-star-o
                                                     text-warning
-                                                "
-                                            ></i
-                                        ></a>
+                                                "></i></a>
                                     </td>
                                     <td class="mailbox-name">
-                                        <a href="read-mail.html"
-                                            >Alexander Pierce</a
-                                        >
+                                        <a href="read-mail.html">Alexander Pierce</a>
                                     </td>
                                     <td class="mailbox-subject">
                                         <b>AdminLTE 3.0 Issue</b> - Trying to
@@ -204,29 +160,19 @@
                                 <tr>
                                     <td>
                                         <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                value=""
-                                                id="check3"
-                                            />
+                                            <input type="checkbox" value="" id="check3" />
                                             <label for="check3"></label>
                                         </div>
                                     </td>
                                     <td class="mailbox-star">
-                                        <a href="#"
-                                            ><i
-                                                class="
+                                        <a href="#"><i class="
                                                     fas
                                                     fa-star-o
                                                     text-warning
-                                                "
-                                            ></i
-                                        ></a>
+                                                "></i></a>
                                     </td>
                                     <td class="mailbox-name">
-                                        <a href="read-mail.html"
-                                            >Alexander Pierce</a
-                                        >
+                                        <a href="read-mail.html">Alexander Pierce</a>
                                     </td>
                                     <td class="mailbox-subject">
                                         <b>AdminLTE 3.0 Issue</b> - Trying to
@@ -240,25 +186,15 @@
                                 <tr>
                                     <td>
                                         <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                value=""
-                                                id="check4"
-                                            />
+                                            <input type="checkbox" value="" id="check4" />
                                             <label for="check4"></label>
                                         </div>
                                     </td>
                                     <td class="mailbox-star">
-                                        <a href="#"
-                                            ><i
-                                                class="fas fa-star text-warning"
-                                            ></i
-                                        ></a>
+                                        <a href="#"><i class="fas fa-star text-warning"></i></a>
                                     </td>
                                     <td class="mailbox-name">
-                                        <a href="read-mail.html"
-                                            >Alexander Pierce</a
-                                        >
+                                        <a href="read-mail.html">Alexander Pierce</a>
                                     </td>
                                     <td class="mailbox-subject">
                                         <b>AdminLTE 3.0 Issue</b> - Trying to
@@ -270,25 +206,15 @@
                                 <tr>
                                     <td>
                                         <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                value=""
-                                                id="check5"
-                                            />
+                                            <input type="checkbox" value="" id="check5" />
                                             <label for="check5"></label>
                                         </div>
                                     </td>
                                     <td class="mailbox-star">
-                                        <a href="#"
-                                            ><i
-                                                class="fas fa-star text-warning"
-                                            ></i
-                                        ></a>
+                                        <a href="#"><i class="fas fa-star text-warning"></i></a>
                                     </td>
                                     <td class="mailbox-name">
-                                        <a href="read-mail.html"
-                                            >Alexander Pierce</a
-                                        >
+                                        <a href="read-mail.html">Alexander Pierce</a>
                                     </td>
                                     <td class="mailbox-subject">
                                         <b>AdminLTE 3.0 Issue</b> - Trying to
@@ -302,29 +228,19 @@
                                 <tr>
                                     <td>
                                         <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                value=""
-                                                id="check6"
-                                            />
+                                            <input type="checkbox" value="" id="check6" />
                                             <label for="check6"></label>
                                         </div>
                                     </td>
                                     <td class="mailbox-star">
-                                        <a href="#"
-                                            ><i
-                                                class="
+                                        <a href="#"><i class="
                                                     fas
                                                     fa-star-o
                                                     text-warning
-                                                "
-                                            ></i
-                                        ></a>
+                                                "></i></a>
                                     </td>
                                     <td class="mailbox-name">
-                                        <a href="read-mail.html"
-                                            >Alexander Pierce</a
-                                        >
+                                        <a href="read-mail.html">Alexander Pierce</a>
                                     </td>
                                     <td class="mailbox-subject">
                                         <b>AdminLTE 3.0 Issue</b> - Trying to
