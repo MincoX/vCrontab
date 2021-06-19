@@ -77,9 +77,9 @@
                                     {{ item.command }}
                                 </td>
                                 <td>
-                                    <span v-if="item.cron_expr != ''">{{
-                                item.cron_expr
-                            }}</span>
+                                    <span v-if="item.cron_expr != ''">
+                                        {{item.cron_expr}}
+                                    </span>
                                     <span v-else>无</span>
                                 </td>
                                 <td>
@@ -92,7 +92,7 @@
                                 </td>
                                 <td>
                                     <span v-if="item.next_time">{{
-                                dateFormat(item.next_time)
+                                item.next_time | formatDate
                             }}</span>
                                     <span v-else>无</span>
                                 </td>
