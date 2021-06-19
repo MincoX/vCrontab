@@ -97,13 +97,13 @@
                                     <span v-else>无</span>
                                 </td>
                                 <td>
-                                    <button type="submit" class="btn btn-warning"
-                                            @click="killJob(item.name)">
+                                    <button v-if="reqTyp == '1'" type="submit"
+                                            class="btn btn-warning" @click="killJob(item.name)">
                                         停止
                                     </button>
                                     &nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-danger"
-                                            @click="deleteJob(item.name)">
+                                    <button v-if="reqTyp == '1'" type="submit"
+                                            class="btn btn-danger" @click="deleteJob(item.name)">
                                         删除
                                     </button>
                                     &nbsp;&nbsp;
