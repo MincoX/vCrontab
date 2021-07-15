@@ -1,4 +1,5 @@
 let formatDate = value => {
+    
     var date = new Date(value);
     var year = date.getFullYear();
     /* 在日期格式中，月份是从0开始的，因此要加0
@@ -20,7 +21,9 @@ let formatDate = value => {
         date.getSeconds() < 10 ?
         "0" + date.getSeconds() :
         date.getSeconds();
-    return year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds;
+    
+    return hours + ":" + minutes + ":" + seconds + ' ' + year + "/" + month + "/" + day;
+   
 }
 
 export {

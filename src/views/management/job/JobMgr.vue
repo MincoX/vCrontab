@@ -74,81 +74,92 @@
 				</div>
 
 				<div class="card-body p-0">
-					<table class="table table-striped">
-						<thead>
-							<tr class="text-center">
-								<th>任务名</th>
-								<th>命令行</th>
-								<th>定时表达式</th>
-								<th>任务类型</th>
-								<th>已执行次数</th>
-								<th>执行状态</th>
-								<th>下次执行时间</th>
-								<th>操作</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr
-								class="text-center"
-								v-for="item in jobPageDatas"
-								:key="item.id"
-							>
-								<td>{{ item.name }}</td>
-								<td>
-									{{ item.command }}
-								</td>
-								<td>
-									<span v-if="item.cron_expr != ''">
-										{{ item.cron_expr }}
-									</span>
-									<span v-else>无</span>
-								</td>
-								<td>
-									{{ jobType[item.typ] }}
-								</td>
-								<td>{{ item.num }}</td>
-								<td>
-									<span :class="[statusType[item.status].cls]">
-										{{ statusType[item.status].status }}</span
-									>
-								</td>
-								<td>
-									<span v-if="item.next_time">{{
-										item.next_time | formatDate
-									}}</span>
-									<span v-else>无</span>
-								</td>
-								<td>
-									<button
-										v-if="reqTyp == '1'"
-										type="submit"
-										class="btn btn-warning"
-										@click="killJob(item.name)"
-									>
-										停止
-									</button>
-									&nbsp;&nbsp;
-									<button
-										v-if="reqTyp == '1'"
-										type="submit"
-										class="btn btn-danger"
-										@click="deleteJob(item.name)"
-									>
-										删除
-									</button>
-									&nbsp;&nbsp;
-									<button
-										type="button"
-										class="btn btn-success"
-										data-toggle="modal"
-										data-target="#modal-xl"
-										@click="getLogs(item.name)"
-									>
-										日志
-									</button>
-								</td>
-							</tr>
-						</tbody>
+					<table class="table table-striped long-table">
+						<tr class="text-center" >
+							<th>任务名</th>
+							<th>命令行</th>
+							<th>定时表达式</th>
+							<th>任务类型</th>
+							<th>已执行次数</th>
+							<th>执行状态</th>
+							<th v-if="reqTyp == 1">下次执行时间</th>
+							<th v-else>最后执行时间</th>
+							<th>操作</th>
+						</tr>
+
+						<tr class="text-center" v-for="item in jobPageDatas" :key="item.id">
+							<td class="long-td" :title=item.name>
+								{{ item.name }}
+							</td>
+							<td class="long-td" :title=item.command>
+								{{ item.command }}
+							</td>
+							<td class="long-td">
+								<span v-if="item.cron_expr != ''" :title=item.cron_expr>
+									{{ item.cron_expr }}
+								</span>
+								<span v-else>无</span>
+							</td>
+							<td class="long-td">
+								{{ jobType[item.typ] }}
+							</td>
+							<td class="long-td">{{ item.num }}</td>
+							<td class="long-td">
+								<span :class="[statusType[item.status].cls]">
+									{{ statusType[item.status].status }}</span
+								>
+							</td>
+							<td class="long-td">
+								<span v-if="item.next_time" :title=item.next_time>{{
+									item.next_time | formatDate
+								}}</span>
+								<span v-else>无</span>
+							</td>
+							<td>
+								<ul class="nav nav-pills ml-auto p-2 float-right">
+									<li class="nav-item dropdown show">
+										<a
+											class="dropdown-toggle"
+											data-toggle="dropdown"
+											href="#"
+											aria-expanded="true"
+										>
+											任务管理
+											<span class="caret"></span>
+										</a>
+										<div
+											class="dropdown-menu"
+											id="addJob-dropdown-menu"
+											x-placement="bottom-start"
+										>
+											<a
+												class="dropdown-item"
+												tabindex="-1"
+												href="#"
+												@click="killJob(item.name)"
+												>停止任务</a
+											>
+											<a
+												class="dropdown-item"
+												tabindex="-1"
+												href="#"
+												@click="deleteJob(item.name)"
+												>删除任务</a
+											>
+											<a
+												class="dropdown-item"
+												tabindex="-1"
+												href="#"
+												data-toggle="modal"
+												data-target="#modal-xl"
+												@click="getLogs(item.name)"
+												>查看日志</a
+											>
+										</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
 					</table>
 				</div>
 
@@ -181,53 +192,50 @@
 								/>
 							</div>
 							<table class="table table-striped">
-								<thead>
-									<tr class="text-center">
-										<th>任务名</th>
-										<th>脚本命令</th>
-										<th>计划调度时间</th>
-										<th>实际调度时间</th>
-										<th>开始执行时间</th>
-										<th>执行结束时间</th>
-										<th>执行状态</th>
-									</tr>
-								</thead>
-								<tbody class="log-table">
-									<tr
-										class="direct-chat-text text-center"
-										style="margin: auto"
-										v-if="!logPageDatas"
-									>
-										暂时没有日志输出
-									</tr>
-									<tr
-										v-for="item in logPageDatas"
-										:key="item.id"
-										class="text-center"
-									>
-										<td>{{ item.job_name }}</td>
-										<td>{{ item.command }}</td>
-										<td>{{ item.plan_time }}</td>
-										<td>{{ item.schedule_time }}</td>
-										<td>{{ item.start_time }}</td>
-										<td>{{ item.end_time }}</td>
-										<td class="tooltips">
-											<p
-												class="badge bg-danger hb-gold"
-												v-if="item.result == '0'"
-											>
-												执行错误
-											</p>
-											<p class="badge bg-success hb-gold" v-else>执行成功</p>
-											<span class="direct-chat-text" v-if="item.err != ''">{{
-												"错误输出：" + item.err
-											}}</span>
-											<span class="direct-chat-text" v-else>{{
-												"结果输出：" + item.output
-											}}</span>
-										</td>
-									</tr>
-								</tbody>
+								<tr class="text-center">
+									<th>任务名</th>
+									<th>脚本命令</th>
+									<th>计划调度时间</th>
+									<th>实际调度时间</th>
+									<th>开始执行时间</th>
+									<th>执行结束时间</th>
+									<th>执行状态</th>
+								</tr>
+
+								<tr
+									class="direct-chat-text text-center"
+									style="margin: auto"
+									v-if="!logPageDatas"
+								>
+									暂时没有日志输出
+								</tr>
+								<tr
+									v-for="item in logPageDatas"
+									:key="item.id"
+									class="text-center"
+								>
+									<td>{{ item.job_name }}</td>
+									<td>{{ item.command }}</td>
+									<td>{{ item.plan_time }}</td>
+									<td>{{ item.schedule_time }}</td>
+									<td>{{ item.start_time }}</td>
+									<td>{{ item.end_time }}</td>
+									<td class="tooltips">
+										<p
+											class="badge bg-danger hb-gold"
+											v-if="item.result == '0'"
+										>
+											执行错误
+										</p>
+										<p class="badge bg-success hb-gold" v-else>执行成功</p>
+										<span class="direct-chat-text" v-if="item.err != ''">{{
+											"错误输出：" + item.err
+										}}</span>
+										<span class="direct-chat-text" v-else>{{
+											"结果输出：" + item.output
+										}}</span>
+									</td>
+								</tr>
 							</table>
 						</div>
 					</div>
@@ -376,14 +384,23 @@ export default {
 	left: -20px;
 	transform: translate3d(-10px, 0px, 0px);
 }
+
 .card-header {
 	padding: 0px 10px;
 }
-.log-title,
-table tr {
+
+.log-title {
 	line-height: 50px;
 }
-table td {
-	padding: 2px 12px;
+
+.long-table {
+	table-layout: fixed;
+	width: 100%;
+	.long-td {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
 }
+
 </style>

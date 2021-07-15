@@ -111,10 +111,10 @@ export default {
           valCheck: {
             expression(field, model, next) {
               next(
-                model[field.key].length > 3 && model[field.key].indexOf(' ') == -1
+                model[field.key].length > 0
               );
             },
-            message: '任务名至少输入四个字符，且不能包含空格'
+            message: '任务名不能为空'
           }
         },
       },
@@ -162,10 +162,10 @@ export default {
           valCheck: {
             expression(field, model, next) {
               next(
-                model[field.key].length > 3 && model[field.key].indexOf(' ')
+                model[field.key].length > 0
               );
             },
-            message: '任务名至少三个字符，且不能包含空格'
+            message: '任务名不能为空'
           }
         },
       },
