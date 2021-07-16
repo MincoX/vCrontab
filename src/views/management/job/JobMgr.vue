@@ -75,7 +75,7 @@
 
 				<div class="card-body p-0">
 					<table class="table table-striped long-table">
-						<tr class="text-center" >
+						<tr class="text-center">
 							<th>任务名</th>
 							<th>命令行</th>
 							<th>定时表达式</th>
@@ -88,14 +88,14 @@
 						</tr>
 
 						<tr class="text-center" v-for="item in jobPageDatas" :key="item.id">
-							<td class="long-td" :title=item.name>
+							<td class="long-td" :title="item.name">
 								{{ item.name }}
 							</td>
-							<td class="long-td" :title=item.command>
+							<td class="long-td" :title="item.command">
 								{{ item.command }}
 							</td>
 							<td class="long-td">
-								<span v-if="item.cron_expr != ''" :title=item.cron_expr>
+								<span v-if="item.cron_expr != ''" :title="item.cron_expr">
 									{{ item.cron_expr }}
 								</span>
 								<span v-else>无</span>
@@ -110,7 +110,7 @@
 								>
 							</td>
 							<td class="long-td">
-								<span v-if="item.next_time" :title=item.next_time>{{
+								<span v-if="item.next_time" :title="item.next_time">{{
 									item.next_time | formatDate
 								}}</span>
 								<span v-else>无</span>
@@ -325,6 +325,7 @@ export default {
 				.then((resp) => {
 					if (resp.code == 200) {
 						this.jobPageDatas = resp.data.jobs;
+						console.info("resp.data.jobs >>> ", resp.data.jobs);
 						this.jobTotalCount = resp.data.totalCount;
 					}
 				});
@@ -401,6 +402,9 @@ export default {
 		white-space: nowrap;
 		overflow: hidden;
 	}
-}
 
+	.long-td:hover {
+		cursor: pointer;
+	}
+}
 </style>
