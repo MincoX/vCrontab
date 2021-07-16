@@ -21,7 +21,7 @@
                 "></button>
         </div>
     </div>
-    <div v-else>nothong to show</div>
+    <div v-else>nothing to show</div>
 </template>
 
 
